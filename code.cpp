@@ -27,6 +27,7 @@ void servoPulse(int pin, int angle) {
 }
 void fireExtinguisher()
 {
+  delay(1000);
   stop();
   if(digitalRead(fsl) == 1)
   {
@@ -46,7 +47,7 @@ void fireExtinguisher()
     }
     stop();
   }
-  while( digitalRead(fsc)  != 1 && Ultrasonic() < 20)
+  while( digitalRead(fsc)  != 0 && Ultrasonic() < 20)
   {
     forward();
   }
@@ -203,8 +204,10 @@ void loop() {
   distanceF = Ultrasonic();
   Serial.print("D F=");
   Serial.println(distanceF);
+
   if((digitalRead(fsl)==1) || (digitalRead(fsc)==1) || (digitalRead(fsr)==1))
   {
+
     fire = true;
     fireExtinguisher();
   }
