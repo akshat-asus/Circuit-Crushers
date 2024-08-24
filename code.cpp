@@ -203,11 +203,11 @@ void loop() {
   distanceF = Ultrasonic();
   Serial.print("D F=");
   Serial.println(distanceF);
-  // if((digitalRead(fsl)==1) || (digitalRead(fsc)==1) || (digitalRead(fsr)==1))
-  // {
-  //   fire = true;
-  //   fireExtinguisher();
-  // }
+  if((digitalRead(fsl)==1) || (digitalRead(fsc)==1) || (digitalRead(fsr)==1))
+  {
+    fire = true;
+    fireExtinguisher();
+  }
   if ((digitalRead(ls) == 0) && (digitalRead(rs) == 0))  //BOTH AT WHITE
   {
     if (distanceF > 15) {
