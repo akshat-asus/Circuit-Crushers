@@ -95,7 +95,7 @@ void compareDistance() {
     forward();
     delay(600);
     right();
-    delay(500);
+    delay(600);
     forward();
     delay(600);
   } else {
@@ -108,7 +108,7 @@ void compareDistance() {
     forward();
     delay(600);
     left();
-    delay(500);
+    delay(600);
     forward();
     delay(600);
   }
@@ -202,7 +202,6 @@ void loop() {
     fire = true;
     fireExtinguisher();
     stop();
-    return;
   }
   if ((digitalRead(ls) == 0) && (digitalRead(rs) == 0))  //BOTH AT WHITE
   {
