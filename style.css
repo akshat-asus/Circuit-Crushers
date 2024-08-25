@@ -16,12 +16,12 @@ html,body{
    background-color: white;
 }
 #header{ 
-    position: fixed;   /* this occupied space will be fixed irrespect of movement of page*/
+    position: fixed;   
      height: 15%;
      width: 100%;
     display: flex;
-    align-items: center;   /*all contents in this region will aligned at center*/
-    justify-content: space-around;   /* all items will be arranged with proper gap linearly*/
+    align-items: center;   
+    justify-content: space-around;   
     background-color: rgb(86, 129, 186);
 } 
 #fakeheader{
@@ -51,14 +51,14 @@ html,body{
       
        height: 132%;
        width: 132%;
-     object-fit: cover;   /* fully fit image inside given space*/
+     object-fit: cover;   
 }
 
 
 #page1{
     height: 85%;
     width: 100%;
-    background-color: rgb(34, 81, 117);
+    background-color: rgb(183, 195, 201);
 }
 
 #strip{
@@ -94,19 +94,20 @@ html,body{
     height: 85%;
     width: 45%;
     border-radius: 35px;
-        background-image:  url(WhatsApp\ Image\ 2024-08-24\ at\ 18.51.58_cfcbd39d.jpg);
+        background-image:  url(WhatsApp\ Image\ 2024-08-24\ at\ 20.31.17_a1bde772.jpg);
         border-radius: 35px;
         background-size: cover;
-        background-repeat: no-repeat; /* Prevents image from repeating */
+        background-repeat: no-repeat; 
         background-position: center;
 }
 #box1 h1{
-    height: 18%;
+    height: 15%;
     width: 100%;
-    margin-top: 25px;
+    margin-top: 0px;
+    
     margin-left: 55px;
     font-weight: 600;
-    color: wheat;
+    color: rgb(32, 44, 66);
     font-size: 50px;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     
@@ -116,8 +117,9 @@ html,body{
     height: 25%;
     width: 80%;
     margin-left:60px ;
+   
     word-spacing: 1px;
-    color: wheat;
+    color: rgb(25, 43, 56);
     font-size:large;
     font-weight: lighter;
 }
@@ -143,67 +145,66 @@ html,body{
     align-items: center;
     justify-content: center;
     
-    background-color: rgb(99, 142, 158);
+    background-color:white
 }
 
 .container {
     width: 100%;
     height: 100%;
-    background: #426a7b;
+    background: #aec2c2;
     display: flex;
     align-items: center;
     justify-content: center;
-    position: relative; /* Ensure container has relative positioning */
+    position: relative; 
 }
 .container img{
     margin-top: 40px;
-    margin-left: 10px;
+    margin-left: 5px;
     align-items: center;
-    height: 80%;
+    justify-content: center;
+    height: 70%;
     width: 40%;
     object-fit: cover;
     border-radius: 20px;
 }
 .btn {
     padding: 10px 60px;
-    background: #8e999a;
+    background: #9bbfc2;
     border: 0;
     outline: none;
     cursor: pointer;
     font-size: 22px;
     font-weight: 500;
     border-radius: 30px;
-    position: relative; /* Ensure button is positioned relative to the popup */
+    position: relative; 
 }
 
-/* Popup styling */
-.popup {           /* inside pop up      */   
-    width: 400px;
-    background: #353759;
+.popup {           
+    width: 300px;
+    background: #9697c8;
     border-radius: 6px;
     position: absolute;
     border-radius: 30px;
-    bottom: 30%; /* Position below the button */
     left: 50%;
     font-family: monospace;
-    transform: translate(-50%, 20px) scale(0.1); /* Correct transform */
+    transform: translate(-50%, 20px) scale(0.1); 
     padding: 0 30px 30px;
-    color: #f8fbfcfd;
+    color: #172327fd;
     visibility: hidden;
-    transition: transform 0.6s, top 0.6s; /* Correct transition */
+    transition: transform 0.6s, top 0.6s; 
 }
 
 #browse{
      height: 50%;
      width: 80%;
-     background-color: #6fd649;
+     background-color: #5749d6;
 
 }
-/* Show popup on button hover */
+
 .btn:hover + .popup {
     visibility: visible;
-    bottom: 95%; /* Adjusted position */
-    transform: translate(-50%, 10px) scale(1); /* Correct transform */
+    bottom: 95%; 
+    transform: translate(-50%, 10px) scale(1); 
 }
 
 .popup h2 {
@@ -227,18 +228,24 @@ html,body{
 }
 
 #page2{
-    height: 85%;
+    height: 100%;
     width: 100%;
-    background-color: rgb(227, 171, 218);
+    background-color: rgb(251, 241, 249);
+    
   }
-#video{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-    background-color: #f0f0f0;
+
+#lower1{
+    height: 70%;
+    width: 100%;
+    background-color: #6fd649;
 }
+
+#lower2{
+    height: 30%;
+    width: 100%;
+    background-color: aqua;
+}
+
 
 .my-video {
     border: 5px solid #333;
