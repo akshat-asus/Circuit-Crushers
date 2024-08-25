@@ -25,46 +25,38 @@ void servoPulse(int pin, int angle) {
   digitalWrite(pin, LOW);
   delay(50);  // Refresh cycle of servo
 }
-void fireExtinguisher()
-{
-  delay(1000);
+void fireExtinguisher() {
   stop();
-  if(digitalRead(fsl) == 1)
-  {
-    while(digitalRead(fsc) != 1)
-    {
+
+  delay(1000);
+  if (digitalRead(fsl) == 0) {
+    while (digitalRead(fsc) != 0) {
       left();
       delay(10);
     }
     stop();
   }
-  if(digitalRead(fsr) == 1)
-  {
-    while(digitalRead(fsc) !=1)
-    {
+  if (digitalRead(fsr) == 0) {
+    while (digitalRead(fsc) != 0) {
       right();
       delay(10);
     }
     stop();
   }
-  while( digitalRead(fsc)  != 0 && Ultrasonic() < 20)
-  {
+  while (digitalRead(fsc) != 0 && Ultrasonic() < 20) {
     forward();
   }
   stop();
-  while(digitalRead(fsc)  != 0)
-  {
-    digitalWrite(pump,HIGH);
-    for(int angle = 70;angle>30;angle-=5)
-    {
+  while (digitalRead(fsc) != 1) {
+    digitalWrite(pump, HIGH);
+    for (int angle = 70; angle > 30; angle -= 5) {
       servoPulse(servo, angle);
     }
-    for(int angle=30;angle<=110;angle+=5)
-    {
-      servoPulse(servo,angle);
+    for (int angle = 30; angle <= 110; angle += 5) {
+      servoPulse(servo, angle);
     }
   }
-  digitalWrite(pump,LOW);
+  digitalWrite(pump, LOW);
 }
 
 void checkSide() {
@@ -119,7 +111,6 @@ void compareDistance() {
     delay(500);
     forward();
     delay(600);
-
   }
 }
 long Ultrasonic() {
@@ -179,15 +170,15 @@ void setup() {
   pinMode(ls, INPUT);
   pinMode(rs, INPUT);
   pinMode(servo, OUTPUT);
-  pinMode(fsl,INPUT);
-  pinMode(fsr,INPUT);
-  pinMode(fsc,INPUT);
-  pinMode(pump,OUTPUT);
+  pinMode(fsl, INPUT);
+  pinMode(fsr, INPUT);
+  pinMode(fsc, INPUT);
+  pinMode(pump, OUTPUT);
 
 
 
-  analogWrite(enA, 200);
-  analogWrite(enB, 200);
+  analogWrite(enA, 150);
+  analogWrite(enB, 150);
   for (int angle = 70; angle <= 140; angle += 5) {
     servoPulse(servo, angle);
   }
@@ -205,11 +196,13 @@ void loop() {
   Serial.print("D F=");
   Serial.println(distanceF);
 
-  if((digitalRead(fsl)==1) || (digitalRead(fsc)==1) || (digitalRead(fsr)==1))
+  if((digitalRead(fsl)==0) || (digitalRead(fsc)==0) || (digitalRead(fsr)==0))
   {
 
     fire = true;
     fireExtinguisher();
+    stop();
+    return;
   }
   if ((digitalRead(ls) == 0) && (digitalRead(rs) == 0))  //BOTH AT WHITE
   {
@@ -217,9 +210,8 @@ void loop() {
       forward();
     } else {
       checkSide();
-      
     }
-   
+
 
   } else if ((digitalRead(ls) == 1) && (digitalRead(rs) == 0)) {
     left();
@@ -227,7 +219,7 @@ void loop() {
     right();
   }
   delay(10);
-  digitalWrite(pump,LOW);
+  // digitalWrite(pump,LOW);
   // if(digitalRead(fsc) == 1)
   // {
   //   digitalWrite(pump,HIGH);
