@@ -68,7 +68,7 @@ html,body{
     display: flex;
     align-items: center;
     justify-content: center;
-    color: azure;    /*all texts colour */
+    color: rgba(226, 147, 27, 0.973);    /*all texts colour */
 }
 #strip p{
     text-align: center;
@@ -237,19 +237,45 @@ html,body{
 #lower1{
     height: 70%;
     width: 100%;
-    background-color: #6fd649;
-}
+    
+     
+        
+        /* max-width: 800px; Maximum width */
+      
+        /* 16:9 aspect ratio */
+        position: relative;
+        overflow: hidden;
+        background-color: #000; /* Optional: Background color */
+    }
+    #lower1 video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        
+    }
 
 #lower2{
     height: 30%;
     width: 100%;
-    background-color: aqua;
+    background-color: rgb(127, 158, 158);
+}
+#mem1 h6{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: larger;
+    text-align: center;
+    color: rgb(82, 65, 39);
+    padding-top: 15px;
 }
 
-
-.my-video {
-    border: 5px solid #333;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    object-fit: cover;
+#mem2 {
+    display: flex;
+    font-size: larger;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    justify-content: space-around;
+    padding-top: 60px;
+    color: #3e4267;
+    
 }
